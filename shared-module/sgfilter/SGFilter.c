@@ -87,7 +87,6 @@ void lubksb(mp_float_t** a, mp_int_t n, mp_int_t* indx, mp_float_t b[]) {
         b[ip] = b[i];
         if (ii)
             for (j = ii; j <= i - 1; j++) sum -= a[i][j] * b[j];
-        // EPSILON CHANGE
         else if (FP_ZERO != fpclassify(sum))
             ii = i;
         b[i] = sum;
@@ -111,7 +110,6 @@ void ludcmp(mp_float_t** a, mp_int_t n, mp_int_t* indx, mp_float_t* d) {
         for (j = 1; j <= n; j++)
             if ((temp = fabsf(a[i][j])) > big)
                 big = temp;
-        // EPSILON CHANGE
         if (FP_ZERO == fpclassify(big)) {
             mp_raise_RuntimeError(translate("Singular matrix found in routine ludcmp()."));
         }
@@ -144,7 +142,6 @@ void ludcmp(mp_float_t** a, mp_int_t n, mp_int_t* indx, mp_float_t* d) {
             vv[imax] = vv[j];
         }
         indx[j] = imax;
-        // EPSILON CHANGE
         if (FP_ZERO == fpclassify(a[j][j]))
             a[j][j] = EPSILON;
         if (j != n) {
@@ -284,7 +281,6 @@ void convlv(mp_float_t data[], mp_uint_t n, mp_float_t respns[], mp_uint_t m, mp
             ans[i - 1] = (fft[i - 1] * (dum = ans[i - 1]) - fft[i] * ans[i]) / no2;
             ans[i] = (fft[i] * dum + fft[i - 1] * ans[i]) / no2;
         } else if (isign == -1) {
-            // EPSILON CHANGE
             if (FP_ZERO == fpclassify(mag2 = ans[i - 1] * ans[i - 1] + ans[i] * ans[i])) {
                 mp_raise_RuntimeError(translate("Attempt of deconvolving at zero response in convlv()."));
             }
