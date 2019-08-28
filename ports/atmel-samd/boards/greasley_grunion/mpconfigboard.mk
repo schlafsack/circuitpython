@@ -55,3 +55,9 @@ CIRCUITPY_PEW = 0
 CIRCUITPY_USTACK = 0
 
 CIRCUITPY_SGFILTER = 1
+
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_BusDevice
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_Register
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_NeoPixel
+FROZEN_MPY_DIRS += $(TOP)/frozen/Adafruit_CircuitPython_ESP32SPI
+FROZEN_MPY_DIRS += $(TOP)/frozen/CircuitPython_NCD_PR33_15

@@ -95,3 +95,12 @@
 [submodule "frozen/circuitpython-stage"]
 	path = frozen/circuitpython-stage
 	url = https://github.com/python-ugame/circuitpython-stage.git
+[submodule "frozen/CircuitPython_NCD_PR33_15"]
+	path = frozen/CircuitPython_NCD_PR33_15
+	url = https://github.com/schlafsack/CircuitPython_NCD_PR33_15.git
+[submodule "frozen/Adafruit_CircuitPython_Register"]
+	path = frozen/Adafruit_CircuitPython_Register
+	url = https://github.com/adafruit/Adafruit_CircuitPython_Register.git
+[submodule "frozen/Adafruit_CircuitPython_ESP32SPI"]
+	path = frozen/Adafruit_CircuitPython_ESP32SPI
+	url = https://github.com/adafruit/Adafruit_CircuitPython_ESP32SPI.git
