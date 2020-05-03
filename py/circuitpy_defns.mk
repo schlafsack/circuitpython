@@ -235,6 +235,9 @@ endif
 ifeq ($(CIRCUITPY_PEW),1)
 SRC_PATTERNS += _pew/%
 endif
+ifeq ($(CIRCUITPY_SGFILTER),1)
+SRC_PATTERNS += sgfilter/%
+endif
 
 # All possible sources are listed here, and are filtered by SRC_PATTERNS in SRC_COMMON_HAL
 SRC_COMMON_HAL_ALL = \
@@ -374,6 +377,8 @@ SRC_SHARED_MODULE_ALL = \
 	terminalio/__init__.c \
 	uheap/__init__.c \
 	ustack/__init__.c \
+	sgfilter/__init__.c \
+	sgfilter/SGFilter.c \
 	_pew/__init__.c \
 	_pew/PewPew.c \
         _eve/__init__.c

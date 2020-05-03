@@ -582,6 +582,13 @@ extern const struct _mp_obj_module_t ustack_module;
 #define USTACK_MODULE
 #endif
 
+#if CIRCUITPY_SGFILTER
+extern const struct _mp_obj_module_t sgfilter_module;
+#define SGFILTER_MODULE          { MP_OBJ_NEW_QSTR(MP_QSTR_sgfilter),(mp_obj_t)&sgfilter_module },
+#else
+#define SGFILTER_MODULE
+#endif
+
 // These modules are not yet in shared-bindings, but we prefer the non-uxxx names.
 #if MICROPY_PY_UERRNO
 #define ERRNO_MODULE           { MP_ROM_QSTR(MP_QSTR_errno), MP_ROM_PTR(&mp_module_uerrno) },
@@ -674,6 +681,7 @@ extern const struct _mp_obj_module_t ustack_module;
     USB_HID_MODULE \
     USB_MIDI_MODULE \
     USTACK_MODULE \
+    SGFILTER_MODULE \
 
 // If weak links are enabled, just include strong links in the main list of modules,
 // and also include the underscore alternate names.
