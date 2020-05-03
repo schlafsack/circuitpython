@@ -73,3 +73,5 @@ TAGS
 *.mo
 
 .vscode
+.idea
+toolchain
